@@ -1,5 +1,5 @@
 readUntangler:
-Inputs: consensus genome (fasta) and sequencing reads (fastq)
+Inputs: consensus genome (fasta) and raw sequencing reads (fastq)
 Process: maps reads to genome using bwa, calls variants using freebayes, haplotypes with hapcut, then a python script is used to generate the two haplotyped sequences
 
 
