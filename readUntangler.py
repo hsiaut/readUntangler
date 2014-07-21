@@ -70,7 +70,7 @@ def run_bwa(reference, readset):
 	bwaindexcmd = "bwa index "+reference
 	subprocess.call(bwaindexcmd, shell=True)
 	alignedsam = reference+".aligned.sam"
-	bwacmd = "bwa mem -t 12 "+reference+" "+" ".readset
+	bwacmd = "bwa mem -t 12 "+reference+" "+readset
 	bwacmd += " | samtools view -SF 4 - > "+alignedsam
 	subprocess.call(bwacmd, shell=True)
 	return alignedsam
