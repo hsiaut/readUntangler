@@ -70,7 +70,7 @@ def run_bwa(reference, readset):
 	bwaindexcmd = "bwa index "+reference
 	subprocess.call(bwaindexcmd, shell=True)
 	alignedsam = reference+".aligned.sam"
-	bwacmd = "bwa mem -t 12 "+reference+" "+" ".join(readset)
+	bwacmd = "bwa mem -t 12 "+reference+" "+" ".readset
 	bwacmd += " | samtools view -SF 4 - > "+alignedsam
 	subprocess.call(bwacmd, shell=True)
 	return alignedsam
@@ -129,7 +129,7 @@ def output_main(args):
 	reference = clean_fasta(args.infile)
 	filterthreshold = args.threshold
 	#look up proper readset using readset module
-	readset = readsetchooser(args.readset)
+	readset = args.readset
 	#if readset is in fasta format, inject fake quality scores
 	
 	#run bwa
@@ -157,7 +157,7 @@ if __name__ == "__main__":
 						help="input consensus fasta file that you wish to haplotype",
 						type=str, default=None, required=True)
 	parser.add_argument("-r", "--readset",
-						help="the name of the readset you wish to use",
+						help="path to fastq file of reads",
 						type=str, required=True)
 	parser.add_argument("-d", "--directory",
 						help="label the output directory, default is a timestamp",
