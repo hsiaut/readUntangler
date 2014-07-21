@@ -1,1 +1,9 @@
-Hello World!
+This script assumes you have samtools and bwa installed and available in your path.
+
+Other requirements:
+The freebayes binary should be copied into the binaries directory and renamed "freebayes.binary"
+Freebayes is available here: https://github.com/ekg/freebayes
+
+Hapcut and associated binaries are available here: https://sites.google.com/site/vibansal/software/hapcut
+readUntangler was used with hapcut v0.5.  Newer versions have not been tested, but please let me know if you run into any problems.
+The HAPCUT and extractHAIRS binaries should also be placed in the binaries directory. 
