@@ -1,3 +1,10 @@
+readUntangler:
+Inputs: consensus genome (fasta) and sequencing reads (fastq)
+Process: maps reads to genome using bwa, calls variants using freebayes, haplotypes with hapcut, then a python script is used to generate the two haplotyped sequences
+
+
+Dependencies:
+
 This script assumes you have samtools and bwa installed and available in your path.
 
 Other requirements:
