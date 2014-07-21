@@ -2,6 +2,7 @@ readUntangler:
 Inputs: consensus genome (fasta) and raw sequencing reads (fastq)
 Process: maps reads to genome using bwa, calls variants using freebayes, haplotypes with hapcut, then a python script is used to generate the two haplotyped sequences
 
+Haplotype results are best when using pacbio or other long reads.  For pacbio data, as of 2013 there was no convenient way of getting fastq files.  I manually injected fake quality scores for all reads and used that as the input.  Comparison of results with manual haplotyping of 28kb showed an agreement of ~99%; disagreements were often ambiguous or manual errors. 
 
 Dependencies:
 
