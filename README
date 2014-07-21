@@ -1,8 +1,12 @@
 readUntangler:
 Inputs: consensus genome (fasta) and raw sequencing reads (fastq)
-Process: maps reads to genome using bwa, calls variants using freebayes, haplotypes with hapcut, then a python script is used to generate the two haplotyped sequences
+Process: maps reads to genome using bwa, calls variants using freebayes, haplotypes with hapcut,
+then a python script is used to generate the two haplotyped sequences
 
-Haplotype results are best when using pacbio or other long reads.  For pacbio data, as of 2013 there was no convenient way of getting fastq files.  I manually injected fake quality scores for all reads and used that as the input.  Comparison of results with manual haplotyping of 28kb showed an agreement of ~99%; disagreements were often ambiguous or manual errors. 
+Haplotype results are best when using pacbio or other long reads.  For pacbio data, as of 2013
+there was no convenient way of getting fastq files.  I manually injected fake quality scores for
+all reads and used that as the input.  Comparison of results with manual haplotyping of 28kb showed
+an agreement of ~99%; disagreements were often ambiguous or manual errors. 
 
 Dependencies:
 
@@ -13,5 +17,6 @@ The freebayes binary should be copied into the binaries directory and renamed "f
 Freebayes is available here: https://github.com/ekg/freebayes
 
 Hapcut and associated binaries are available here: https://sites.google.com/site/vibansal/software/hapcut
-readUntangler was used with hapcut v0.5.  Newer versions have not been tested, but please let me know if you run into any problems.
+readUntangler was used with hapcut v0.5.  Newer versions have not been tested,
+but please let me know if you run into any problems.
 The HAPCUT and extractHAIRS binaries should also be placed in the binaries directory. 
